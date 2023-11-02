@@ -1,4 +1,4 @@
-public abstract class Monster {
+public abstract class Monster implements IAttackable{
     private String name;
     private int health;
     private int power;

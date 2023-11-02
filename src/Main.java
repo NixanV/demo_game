@@ -8,7 +8,7 @@ public class Main {
 
             while (myPaladin.getHealth() != 0 && SkeletonKing.getHealth() != 0){
                 System.out.println(myPaladin.defend(SkeletonKing.getPower()));
-                System.out.println(SkeletonKing.defend(myPaladin.getPower()));
+                //System.out.println(SkeletonKing.defend(myPaladin.getPower()));
             }
 
 

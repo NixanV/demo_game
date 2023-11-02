@@ -1,4 +1,4 @@
-public abstract class Character {
+public abstract class Character implements IDefendable{
     private String name;
     private int health;
     private int power;
@@ -11,9 +11,8 @@ public abstract class Character {
         this.race = race;
 
     }
-
     public abstract int attack(String monster);
-    public abstract int defend(int attackPower);
+//    public abstract int defend(int attackPower);
 
     public String getName() {
         return name;

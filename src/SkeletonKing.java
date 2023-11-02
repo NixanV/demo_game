@@ -6,9 +6,11 @@ public class SkeletonKing extends Monster{
     public int attack(String target){
         return getPower();
     }
-    public int defend(int attackPower) {
-        int defendDamage = 15;
-        int remainingHealth = getHealth() - (attackPower - defendDamage);
+
+
+    @Override
+    public int takeDamage(int damage) {
+        int remainingHealth = getHealth() - damage;
 
         if(remainingHealth <= 0) {
             setHealth(0);
@@ -18,7 +20,5 @@ public class SkeletonKing extends Monster{
 
         return remainingHealth;
 
-
     }
-
 }

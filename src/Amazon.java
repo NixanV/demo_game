@@ -10,9 +10,9 @@ public class Amazon extends Character{
     }
 
     @Override
-    public int defend(int attackPower) {
+    public int defend(int takenDamage) {
         int defendDamage = 15;
-        int remainingHealth = getHealth() - (attackPower - defendDamage);
+        int remainingHealth = getHealth() - (takenDamage - defendDamage);
 
         if(remainingHealth < 0) {
             setHealth(0);
@@ -20,8 +20,8 @@ public class Amazon extends Character{
             setHealth(remainingHealth);
         }
 
-        return defendDamage;
 
 
     }
+
 }

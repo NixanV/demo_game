@@ -7,4 +7,10 @@ public class Butcher extends Monster{
     public int attack(String target) {
         return getPower();
     }
+
+    @Override
+    public int takeDamage(int damage) {
+
+    }
+
 }
