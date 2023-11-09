@@ -21,4 +21,17 @@ public class Amazon extends Character{
         }
     }
 
+    @Override
+    public void heal(String Character, int healing) throws WrongNameException {
+        int healedHealth;
+
+        if(Character.equals("Amazon")){
+                healedHealth = getHealth() + healing;
+                setHealth(healedHealth);
+        }else{
+            throw new WrongNameException();
+        }
+
+
+    }
 }
