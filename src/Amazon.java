@@ -1,4 +1,4 @@
-public class Amazon extends Character{
+public class Amazon extends Character implements IHealable{
 
     public Amazon(String name, int health, int power, String race) {
         super(name, health, power, race);

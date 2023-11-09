@@ -1,4 +1,4 @@
-public class Nekromant extends Character{
+public class Nekromant extends Character implements IHealable{
     public Nekromant(String name, int health, int power, String race){
         super(name, health, power, race);
     }
@@ -19,4 +19,15 @@ public class Nekromant extends Character{
 
     }
 
+    @Override
+    public void heal(String Character, int healing) throws WrongNameException {
+        int healedHealth;
+
+        if(Character.equals("Amazon")){
+            healedHealth = getHealth() + healing;
+            setHealth(healedHealth);
+        }else{
+            throw new WrongNameException();
+        }
+    }
 }

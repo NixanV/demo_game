@@ -1,4 +1,4 @@
-public class Paladin extends Character{
+public class Paladin extends Character implements IHealable{
 
     public Paladin(String name, int health, int power, String race) {
         super(name, health, power, race);
@@ -19,5 +19,15 @@ public class Paladin extends Character{
     }
 
 
+    @Override
+    public void heal(String Character, int healing) throws WrongNameException {
+        int healedHealth;
 
+        if(Character.equals("Amazon")){
+            healedHealth = getHealth() + healing;
+            setHealth(healedHealth);
+        }else{
+            throw new WrongNameException();
+        }
+    }
 }
