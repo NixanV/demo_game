@@ -1,4 +1,4 @@
-public class Paladin extends Character {
+public class Paladin extends Character{
 
     public Paladin(String name, int health, int power, String race) {
         super(name, health, power, race);
@@ -24,4 +24,7 @@ public class Paladin extends Character {
 
 
     }
+
+
+
 }

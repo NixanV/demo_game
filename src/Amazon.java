@@ -21,7 +21,7 @@ public class Amazon extends Character{
         }
 
 
-
+        return remainingHealth;
     }
 
 }

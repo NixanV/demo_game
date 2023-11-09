@@ -10,7 +10,15 @@ public class Butcher extends Monster{
 
     @Override
     public int takeDamage(int damage) {
+        int remainingHealth = getHealth() - damage;
 
+        if(remainingHealth <= 0) {
+            setHealth(0);
+        } else {
+            setHealth(remainingHealth);
+        }
+
+        return remainingHealth;
     }
 
 }

@@ -1,3 +1,3 @@
 public interface IAttackable {
-    public abstract int takeDamage(int damage);
+    public abstract void takeDamage(int damage);
 }
