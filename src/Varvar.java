@@ -9,7 +9,7 @@ public class Varvar extends Character{
     }
 
     @Override
-    public int defend(int attackPower) {
+    public void defend(int attackPower) {
         int defendDamage = 25;
         int remainingHealth = getHealth() - (attackPower - defendDamage);
 
@@ -18,9 +18,6 @@ public class Varvar extends Character{
         } else {
             setHealth(remainingHealth);
         }
-
-        return defendDamage;
-
 
     }
 }

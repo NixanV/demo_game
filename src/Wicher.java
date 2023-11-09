@@ -9,7 +9,7 @@ public class Wicher extends Character{
     }
 
     @Override
-    public int defend(int attackPower) {
+    public void defend(int attackPower) {
         int defendDamage = 10;
         int remainingHealth = getHealth() - (attackPower - defendDamage);
 
@@ -18,9 +18,5 @@ public class Wicher extends Character{
         } else {
             setHealth(remainingHealth);
         }
-
-        return defendDamage;
-
-
     }
 }

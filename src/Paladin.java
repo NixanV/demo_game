@@ -10,18 +10,11 @@ public class Paladin extends Character{
     }
 
     @Override
-    public int defend(int attackPower) {
+    public void defend(int attackPower) {
         int defendDamage = 25;
         int remainingHealth = (getHealth() - (attackPower - defendDamage));
 
-        if(remainingHealth <= 0) {
-            setHealth(0);
-        } else {
-            setHealth(remainingHealth);
-        }
-
-        return remainingHealth;
-
+        setHealth(Math.max(remainingHealth, 0));
 
     }
 

@@ -1,3 +1,3 @@
 public interface IDefendable {
-    public abstract int defend(int takenDamage);
+    public abstract void defend(int takenDamage);
 }

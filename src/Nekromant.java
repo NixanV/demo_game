@@ -6,7 +6,7 @@ public class Nekromant extends Character{
         return 25;
     }
 
-    public int defend(int attackPower){
+    public void defend(int attackPower){
         int defendDamage = 15;
         int remainingHealth = getHealth() - (attackPower - defendDamage);
 
@@ -16,7 +16,6 @@ public class Nekromant extends Character{
             setHealth(remainingHealth);
         }
 
-        return defendDamage;
 
     }
 

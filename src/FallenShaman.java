@@ -12,11 +12,7 @@ public class FallenShaman extends Monster{
     public void takeDamage(int damage) {
         int remainingHealth = getHealth() - damage;
 
-        if(remainingHealth <= 0) {
-            setHealth(0);
-        } else {
-            setHealth(remainingHealth);
-        }
+        setHealth(Math.max(remainingHealth, 0));
 
     }
 }
