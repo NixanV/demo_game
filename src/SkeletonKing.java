@@ -9,7 +9,7 @@ public class SkeletonKing extends Monster{
 
 
     @Override
-    public int takeDamage(int damage) {
+    public void takeDamage(int damage) {
         int remainingHealth = getHealth() - damage;
 
         if(remainingHealth <= 0) {
@@ -18,7 +18,6 @@ public class SkeletonKing extends Monster{
             setHealth(remainingHealth);
         }
 
-        return remainingHealth;
 
     }
 }

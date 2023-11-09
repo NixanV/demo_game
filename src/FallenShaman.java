@@ -8,4 +8,15 @@ public class FallenShaman extends Monster{
         return getPower();
     }
 
+    @Override
+    public void takeDamage(int damage) {
+        int remainingHealth = getHealth() - damage;
+
+        if(remainingHealth <= 0) {
+            setHealth(0);
+        } else {
+            setHealth(remainingHealth);
+        }
+
+    }
 }

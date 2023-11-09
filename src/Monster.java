@@ -11,10 +11,12 @@ public abstract class Monster implements IAttackable{
         this.race = race;
     }
 
-    @Override
-    public void takeDamage(int damage) {
-        int remainingHealth
-    }
+//    @Override
+//    public void takeDamage(int damage) {
+//        int remainingHealth;
+//        remainingHealth = getHealth() - damage;
+//        setHealth(remainingHealth);
+//    }
 
     public String getName() {
         return name;
