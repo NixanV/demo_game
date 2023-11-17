@@ -11,6 +11,8 @@ public abstract class Monster implements IAttackable{
         this.race = race;
     }
 
+
+
 //    @Override
 //    public void takeDamage(int damage) {
 //        int remainingHealth;
