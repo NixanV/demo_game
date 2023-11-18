@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class Game {
-    Queue<Monster> monster = new LinkedList<>();
+    private Queue<Monster> monster = new LinkedList<>();
     private Character hero;
 
 
