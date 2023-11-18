@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public abstract class Game {
+public class Game {
     Queue<Monster> monster;
     private Character hero;
 
