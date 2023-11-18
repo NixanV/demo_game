@@ -11,6 +11,8 @@ public abstract class Character implements IDefendable{
         this.race = race;
 
     }
+
+
     public abstract int attack(String monster);
 //    public abstract int defend(int attackPower);
 

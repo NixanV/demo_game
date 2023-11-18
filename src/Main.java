@@ -1,6 +1,6 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class Main extends Game{
     public static void main(String[] args) {
             Paladin myPaladin = new Paladin("Bat Gergi", 100, 25, "Paladin");
             SkeletonKing SkeletonKing = new SkeletonKing("King", 80, 30, "Skeleton King");
