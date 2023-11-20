@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class Game {
-    private Queue<Monster> monster = new LinkedList<>();
+    private final Queue<Monster> monster = new LinkedList<>();
     private Character hero;
 
 
@@ -34,7 +34,7 @@ public class Game {
             this.monster.add(new FallenShaman("FallenShaman", 60, 29, "FallenShaman"));
         }
         else if(monster.equals("SkeletonKing")){
-            this.monster.add(new SkeletonKing("SkeletonKing", 55, 40, "SkeletonKing"));
+            this.monster.add(new SkeletonKing("SkeletonKing", 55, 90, "SkeletonKing"));
         }
         else if(monster.equals("Butcher")){
             this.monster.add(new Butcher("Butcher", 65, 32, "Butcher"));
@@ -49,12 +49,16 @@ public class Game {
 
     public void startBattle() throws WrongNameException, InterruptedException {
         int numberOfMonsters = monster.size();
-        if(!this.monster.isEmpty() && hero.getHealth() > 0){
+        if(!this.monster.isEmpty()){
             for(int i=0; i<numberOfMonsters; i++){
                 Monster mons = this.monster.poll();
                 System.out.println(mons.getName());
+                if(hero.getHealth() <= 0){
+                    break;
+                }
                 while (mons.getHealth() != 0) {
                     mons.takeDamage(hero.getPower());
+                    System.out.println(mons.getHealth());
                     if (mons.getHealth() == 0) {
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 15);
@@ -63,6 +67,7 @@ public class Game {
                             break;
                         }
                         System.out.println("Hero is ready for next battle!");
+                        System.out.println(hero.getHealth());
                         break;
                     }
                     hero.defend(mons.getPower());
@@ -74,6 +79,7 @@ public class Game {
             else{
                 System.out.println("Your hero is a winner of the game! Congratulations!");
             }
+            System.out.println(hero.getHealth());
 
         }
 

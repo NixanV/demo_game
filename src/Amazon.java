@@ -12,9 +12,10 @@ public class Amazon extends Character implements IHealable{
     @Override
     public void defend(int takenDamage) {
         int defendDamage = 15;
-        int remainingHealth = getHealth() - (takenDamage - defendDamage);
+        int remainingHealth;
+        remainingHealth = getHealth() - (takenDamage - defendDamage);
 
-        if(remainingHealth < 0) {
+        if(remainingHealth <= 0) {
             setHealth(0);
         } else {
             setHealth(remainingHealth);

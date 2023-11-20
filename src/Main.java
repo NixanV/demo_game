@@ -21,7 +21,7 @@ public class Main{
         System.out.println("Now import monsters");
         for(int i = 0; i < n; i++){
             String monsterRace;
-            System.out.println("import " + i +" number of monster");
+            System.out.println("import " + (i+1) +" number of monster");
             monsterRace = myScanner.next();
             myGame.addMonster(monsterRace);
         }
