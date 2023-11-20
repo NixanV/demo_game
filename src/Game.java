@@ -48,7 +48,7 @@ public class Game {
     }
 
     public void startBattle() throws WrongNameException, InterruptedException {
-        if(!this.monster.isEmpty()){
+        if(!this.monster.isEmpty() && hero.getHealth() > 0){
             for(int i=0; i<this.monster.size(); i++){
                 Monster mons = this.monster.peek();
                 while (mons.getHealth() != 0) {
@@ -63,7 +63,15 @@ public class Game {
                     hero.defend(mons.getPower());
                 }
             }
+            if(hero.getHealth() <= 0 && !this.monster.isEmpty()){
+                System.out.println("Your hero is dead! Game over!");
+            }
+            else{
+                System.out.println("Your hero is a winner of the game! Congratulations!");
+            }
+
         }
+
     }
 
 

@@ -1,5 +1,5 @@
 public class WrongRaceException extends Exception{
-    public static String getMessage(){
+    public String getMessage(){
         return "Wrong race!";
     }
 }
