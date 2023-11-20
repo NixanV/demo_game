@@ -31,10 +31,10 @@ public class Game {
 
     public void addMonster(String monster) throws WrongRaceException{
         if(monster.equals("FallenShaman")){
-            this.monster.add(new FallenShaman("FallenShaman", 60, 29, "FallenShaman"));
+            this.monster.add(new FallenShaman("Shaman", 60, 29, "FallenShaman"));
         }
         else if(monster.equals("SkeletonKing")){
-            this.monster.add(new SkeletonKing("SkeletonKing", 55, 90, "SkeletonKing"));
+            this.monster.add(new SkeletonKing("King", 55, 90, "SkeletonKing"));
         }
         else if(monster.equals("Butcher")){
             this.monster.add(new Butcher("Butcher", 65, 32, "Butcher"));
@@ -56,9 +56,8 @@ public class Game {
                 if(hero.getHealth() <= 0){
                     break;
                 }
-                while (mons.getHealth() != 0) {
+                while (mons.getHealth() >= 0 && hero.getHealth() > 0) {
                     mons.takeDamage(hero.getPower());
-                    System.out.println(mons.getHealth());
                     if (mons.getHealth() == 0) {
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 15);
@@ -73,13 +72,12 @@ public class Game {
                     hero.defend(mons.getPower());
                 }
             }
-            if(hero.getHealth() <= 0 && !this.monster.isEmpty()){
+            if(hero.getHealth() == 0){
                 System.out.println("Your hero is dead! Game over!");
             }
             else{
                 System.out.println("Your hero is a winner of the game! Congratulations!");
             }
-            System.out.println(hero.getHealth());
 
         }
 
