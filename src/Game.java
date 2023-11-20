@@ -34,7 +34,7 @@ public class Game {
             this.monster.add(new FallenShaman("Shaman", 60, 29, "FallenShaman"));
         }
         else if(monster.equals("SkeletonKing")){
-            this.monster.add(new SkeletonKing("King", 55, 90, "SkeletonKing"));
+            this.monster.add(new SkeletonKing("King", 55, 35, "SkeletonKing"));
         }
         else if(monster.equals("Butcher")){
             this.monster.add(new Butcher("Butcher", 65, 32, "Butcher"));
