@@ -48,15 +48,20 @@ public class Game {
     }
 
     public void startBattle() throws WrongNameException, InterruptedException {
+        int numberOfMonsters = monster.size();
         if(!this.monster.isEmpty() && hero.getHealth() > 0){
-            for(int i=0; i<this.monster.size(); i++){
-                Monster mons = this.monster.peek();
+            for(int i=0; i<numberOfMonsters; i++){
+                Monster mons = this.monster.poll();
+                System.out.println(mons.getName());
                 while (mons.getHealth() != 0) {
                     mons.takeDamage(hero.getPower());
                     if (mons.getHealth() == 0) {
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 15);
                         Thread.sleep(5000);
+                        if(monster.isEmpty()){
+                            break;
+                        }
                         System.out.println("Hero is ready for next battle!");
                         break;
                     }
