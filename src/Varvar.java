@@ -20,4 +20,9 @@ public class Varvar extends Character{
         }
 
     }
+
+    @Override
+    public void heal(Character character, int healing) throws WrongNameException {
+
+    }
 }

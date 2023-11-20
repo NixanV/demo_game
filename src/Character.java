@@ -1,4 +1,4 @@
-public abstract class Character implements IDefendable{
+public abstract class Character implements IDefendable, IHealable{
     private String name;
     private int health;
     private int power;

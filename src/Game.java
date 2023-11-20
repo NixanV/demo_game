@@ -31,19 +31,38 @@ public class Game {
 
     public void addMonster(String monster) throws WrongRaceException{
         if(monster.equals("FallenShaman")){
-            this.monster.add(new FallenShaman("FallenShaman", 40, 26, "FallenShaman"));
+            this.monster.add(new FallenShaman("FallenShaman", 60, 29, "FallenShaman"));
         }
         else if(monster.equals("SkeletonKing")){
-            this.monster.add(new SkeletonKing("SkeletonKing", 50, 40, "SkeletonKing"));
+            this.monster.add(new SkeletonKing("SkeletonKing", 55, 40, "SkeletonKing"));
         }
         else if(monster.equals("Butcher")){
-            this.monster.add(new Butcher("Butcher", 60, 32, "Butcher"));
+            this.monster.add(new Butcher("Butcher", 65, 32, "Butcher"));
         }
         else if(monster.isEmpty()){
             throw new WrongRaceException();
         }
         else{
             throw new WrongRaceException();
+        }
+    }
+
+    public void startBattle() throws WrongNameException, InterruptedException {
+        if(!this.monster.isEmpty()){
+            for(int i=0; i<this.monster.size(); i++){
+                Monster mons = this.monster.peek();
+                while (mons.getHealth() != 0) {
+                    mons.takeDamage(hero.getPower());
+                    if (mons.getHealth() == 0) {
+                        // da ne nadvishava max zhivota na geroq
+                        hero.heal(hero, 15);
+                        Thread.sleep(5000);
+                        System.out.println("Hero is ready for next battle!");
+                        break;
+                    }
+                    hero.defend(mons.getPower());
+                }
+            }
         }
     }
 

@@ -20,10 +20,10 @@ public class Paladin extends Character implements IHealable{
 
 
     @Override
-    public void heal(String Character, int healing) throws WrongNameException {
+    public void heal(Character character, int healing) throws WrongNameException {
         int healedHealth;
 
-        if(Character.equals("Amazon")){
+        if(character.getRace().equals("Paladin")){
             healedHealth = getHealth() + healing;
             setHealth(healedHealth);
         }else{

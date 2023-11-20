@@ -20,10 +20,10 @@ public class Nekromant extends Character implements IHealable{
     }
 
     @Override
-    public void heal(String Character, int healing) throws WrongNameException {
+    public void heal(Character character, int healing) throws WrongNameException {
         int healedHealth;
 
-        if(Character.equals("Amazon")){
+        if(character.getRace().equals("Nekromant")){
             healedHealth = getHealth() + healing;
             setHealth(healedHealth);
         }else{
