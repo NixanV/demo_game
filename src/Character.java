@@ -1,3 +1,5 @@
+import javax.management.openmbean.TabularDataSupport;
+
 public abstract class Character implements IDefendable, IHealable{
     private String name;
     private int health;
@@ -16,7 +18,9 @@ public abstract class Character implements IDefendable, IHealable{
 
     }
 
+    public abstract void gainExperience(int xp);
 
+    public abstract void levelUp();
     public abstract int attack(String monster);
 //    public abstract int defend(int attackPower);
 
