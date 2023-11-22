@@ -1,7 +1,7 @@
 public class Amazon extends Character implements IHealable{
 
-    public Amazon(String name, int health, int power, String race) {
-        super(name, health, power, race);
+    public Amazon(String name, int health, int power, String race, int level, int xp) {
+        super(name, health, power, race, level, xp);
     }
 
     @Override

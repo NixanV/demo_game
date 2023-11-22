@@ -3,12 +3,16 @@ public abstract class Character implements IDefendable, IHealable{
     private int health;
     private int power;
     private String race;
+    private int level;
+    private int xp;
 
-    public Character(String name, int health, int power, String race){
+    public Character(String name, int health, int power, String race, int level, int xp){
         this.name = name;
         this.health = health;
         this.power = power;
         this.race = race;
+        this.level = level;
+        this.xp = xp;
 
     }
 
@@ -16,6 +20,17 @@ public abstract class Character implements IDefendable, IHealable{
     public abstract int attack(String monster);
 //    public abstract int defend(int attackPower);
 
+    public int getLevel(){return level; }
+
+    public void setLevel(int level){
+        this.level = level;
+    }
+
+    public int getXp(){return xp;}
+
+    public void setXp(int xp){
+        this.xp = xp;
+    }
     public String getName() {
         return name;
     }

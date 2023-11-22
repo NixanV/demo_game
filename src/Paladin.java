@@ -1,7 +1,7 @@
 public class Paladin extends Character implements IHealable{
 
-    public Paladin(String name, int health, int power, String race) {
-        super(name, health, power, race);
+    public Paladin(String name, int health, int power, String race, int level, int xp) {
+        super(name, health, power, race, level, xp);
     }
 
     @Override
