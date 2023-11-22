@@ -2,6 +2,17 @@ public class Nekromant extends Character implements IHealable{
     public Nekromant(String name, int health, int power, String race, int level, int xp){
         super(name, health, power, race, level, xp);
     }
+
+    @Override
+    public void gainExperience(int xp) {
+
+    }
+
+    @Override
+    public void levelUp() {
+
+    }
+
     public int attack(String Monster){
         return 25;
     }

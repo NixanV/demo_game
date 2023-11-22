@@ -4,6 +4,16 @@ public class Varvar extends Character{
     }
 
     @Override
+    public void gainExperience(int xp) {
+
+    }
+
+    @Override
+    public void levelUp() {
+
+    }
+
+    @Override
     public int attack(String monster) {
         return 40;
     }

@@ -5,6 +5,16 @@ public class Amazon extends Character implements IHealable{
     }
 
     @Override
+    public void gainExperience(int xp) {
+
+    }
+
+    @Override
+    public void levelUp() {
+
+    }
+
+    @Override
     public int attack(String monster) {
         return 40;
     }
