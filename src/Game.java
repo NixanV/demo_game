@@ -59,6 +59,15 @@ public class Game {
                 while (mons.getHealth() >= 0 && hero.getHealth() > 0) {
                     mons.takeDamage(hero.getPower());
                     if (mons.getHealth() == 0) {
+                        if(mons.getRace().equals("FallenShaman")){
+                            hero.gainExperience(40);
+                        }
+                        else if(mons.getRace().equals("SkeletonKing")){
+                            hero.gainExperience(30);
+                        }
+                        else if(mons.getRace().equals("Butcher")){
+                            hero.gainExperience(50);
+                        }
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 15);
                         Thread.sleep(5000);

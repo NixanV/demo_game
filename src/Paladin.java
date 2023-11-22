@@ -15,6 +15,8 @@ public class Paladin extends Character implements IHealable{
             if (getXp() >= 100) {
                 setLevel(getLevel() + 1);
                 setXp(getXp() - 100);
+                setHealth(getHealth() + 20);
+                setPower(getPower() + 5);
             }
         }
         System.out.println("Your hero gain level");
