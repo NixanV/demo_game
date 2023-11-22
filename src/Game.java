@@ -26,18 +26,17 @@ public class Game {
         else{
             throw new  WrongRaceException();
         }
-        System.out.println(this.hero.getPower());
     }
 
     public void addMonster(String monster) throws WrongRaceException{
         if(monster.equals("FallenShaman")){
-            this.monster.add(new FallenShaman("Shaman", 60, 29, "FallenShaman"));
+            this.monster.add(new FallenShaman("Shaman", 60, 31, "FallenShaman"));
         }
         else if(monster.equals("SkeletonKing")){
-            this.monster.add(new SkeletonKing("King", 55, 35, "SkeletonKing"));
+            this.monster.add(new SkeletonKing("King", 55, 42, "SkeletonKing"));
         }
         else if(monster.equals("Butcher")){
-            this.monster.add(new Butcher("Butcher", 65, 32, "Butcher"));
+            this.monster.add(new Butcher("Butcher", 65, 38, "Butcher"));
         }
         else if(monster.isEmpty()){
             throw new WrongRaceException();
@@ -61,21 +60,30 @@ public class Game {
                     if (mons.getHealth() == 0) {
                         if(mons.getRace().equals("FallenShaman")){
                             hero.gainExperience(40);
+                            if(hero.getXp() >= 100){
+                                hero.levelUp();
+                            }
+
                         }
                         else if(mons.getRace().equals("SkeletonKing")){
                             hero.gainExperience(30);
+                            if(hero.getXp() >= 100){
+                                hero.levelUp();
+                            }
                         }
                         else if(mons.getRace().equals("Butcher")){
                             hero.gainExperience(50);
+                            if(hero.getXp() >= 100){
+                                hero.levelUp();
+                            }
                         }
                         // da ne nadvishava max zhivota na geroq
-                        hero.heal(hero, 15);
+                        hero.heal(hero, 5);
                         Thread.sleep(5000);
                         if(monster.isEmpty()){
                             break;
                         }
                         System.out.println("Hero is ready for next battle!");
-                        System.out.println(hero.getHealth());
                         break;
                     }
                     hero.defend(mons.getPower());
