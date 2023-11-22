@@ -5,12 +5,20 @@ public class Varvar extends Character{
 
     @Override
     public void gainExperience(int xp) {
-
+        setXp(getXp() + xp);
     }
 
     @Override
     public void levelUp() {
-
+        while(getXp() > 100) {
+            if (getXp() >= 100) {
+                setLevel(getLevel() + 1);
+                setXp(getXp() - 100);
+                setHealth(getHealth() + 20);
+                setPower(getPower() + 5);
+            }
+        }
+        System.out.println("Your hero gain level");
     }
 
     @Override
