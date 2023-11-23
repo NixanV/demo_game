@@ -1,0 +1,35 @@
+public class Effects {
+    private int damage;
+    private int heal;
+    private int shield;
+
+    public Effects(int damage, int heal, int shield) {
+        this.damage = damage;
+        this.heal = heal;
+        this.shield = shield;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getHeal() {
+        return heal;
+    }
+
+    public void setHeal(int heal) {
+        this.heal = heal;
+    }
+
+    public int getShield() {
+        return shield;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
+    }
+}
