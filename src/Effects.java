@@ -9,6 +9,19 @@ public class Effects {
         this.shield = shield;
     }
 
+
+    public void typeOfEffect(String item){
+        if(item.equals("Dragonfire Elixir")){
+            heal += 15;
+        }
+        else if(item.equals("Eldritch Blade")){
+            damage += 6;
+        } else if (item.equals("Wyvern Armor")) {
+            shield += 10;
+        }
+    }
+
+
     public int getDamage() {
         return damage;
     }
