@@ -10,9 +10,11 @@ public class Effects {
     }
 
 
-    public void typeOfEffect(String item){
+    public void typeOfEffect(String item, Character character){
         if(item.equals("Dragonfire Elixir")){
-            heal += 15;
+            Character character;
+            heal = 15;
+            character.setHealth(character.getHealth() + heal);
         }
         else if(item.equals("Eldritch Blade")){
             damage += 6;
