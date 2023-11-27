@@ -24,10 +24,5 @@ public class Inventory {
         }
     }
 
-    public void effect(Effects effects){
-        for(String item : items){
-            effects.typeOfEffect(item);
-        }
-    }
 
 }

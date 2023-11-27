@@ -1,7 +1,7 @@
 public class Paladin extends Character implements IHealable{
 
-    public Paladin(String name, int health, int power, String race, int level, int xp) {
-        super(name, health, power, race, level, xp);
+    public Paladin(String name, int health, int power, String race, int level, int xp, int shield) {
+        super(name, health, power, race, level, xp, shield);
     }
 
     @Override
@@ -30,9 +30,16 @@ public class Paladin extends Character implements IHealable{
     @Override
     public void defend(int attackPower) {
         int defendDamage = 25;
-        int remainingHealth = (getHealth() - (attackPower - defendDamage));
-
-        setHealth(Math.max(remainingHealth, 0));
+        if(getShield() > 0 && getShield() >= attackPower){
+            setShield(getShield() - attackPower);
+        }
+        else if(getShield() > 0 && getShield() < attackPower){
+            setShield(0);
+            attackPower -= getShield();
+            if(attackPower > defendDamage){
+                setHealth(getHealth() - (attackPower - defendDamage));
+            }
+        }
 
     }
 

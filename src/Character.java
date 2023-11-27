@@ -7,15 +7,16 @@ public abstract class Character implements IDefendable, IHealable{
     private String race;
     private int level;
     private int xp;
+    private int shield;
 
-    public Character(String name, int health, int power, String race, int level, int xp){
+    public Character(String name, int health, int power, String race, int level, int xp, int shield){
         this.name = name;
         this.health = health;
         this.power = power;
         this.race = race;
         this.level = level;
         this.xp = xp;
-
+        this.shield = shield;
     }
 
     public abstract void gainExperience(int xp);
@@ -65,5 +66,13 @@ public abstract class Character implements IDefendable, IHealable{
 
     public void setRace(String race) {
         this.race = race;
+    }
+
+    public int getShield() {
+        return shield;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
     }
 }

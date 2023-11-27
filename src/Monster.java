@@ -52,5 +52,4 @@ public abstract class Monster implements IAttackable{
         this.race = race;
     }
 
-    public abstract int attack(String target);
 }

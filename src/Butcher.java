@@ -3,10 +3,6 @@ public class Butcher extends Monster{
         super(name, health, power, race);
     }
 
-    @Override
-    public int attack(String target) {
-        return getPower();
-    }
 
     @Override
     public void takeDamage(int damage) {

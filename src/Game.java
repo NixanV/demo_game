@@ -10,7 +10,7 @@ public class Game {
 
     public void createHero(String name, String race) throws WrongRaceException{
         if(race.equals("Paladin")){
-            this.hero = new Paladin(name, 150, 25, race, 1, 0);
+            this.hero = new Paladin(name, 150, 25, race, 1, 0, 0);
         } else if (race.equals("Witcher")) {
             this.hero = new Wicher(name, 120, 30, race, 1, 0);
         } else if (race.equals("Varvar")) {
@@ -85,6 +85,9 @@ public class Game {
                         }
                         System.out.println("Hero is ready for next battle!");
                         break;
+                    }
+                    if(hero.getShield() > 0){
+
                     }
                     hero.defend(mons.getPower());
                 }
