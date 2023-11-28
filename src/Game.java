@@ -1,7 +1,9 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+
 
 public class Game {
     private final Queue<Monster> monster = new LinkedList<>();
@@ -48,7 +50,17 @@ public class Game {
 
     public void startBattle() throws WrongNameException, InterruptedException {
         int counter = 0;
+
         Inventory inventar = new Inventory();
+        JFrame myFrame = new JFrame();
+        JLabel label = new JLabel();
+        myFrame.setTitle("Game");
+        myFrame.setSize(500, 500);
+        myFrame.setVisible(true);
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ImageIcon image = new ImageIcon("../paladin.png");
+        label.setIcon(image);
+        myFrame.add(label);
 
         int numberOfMonsters = monster.size();
         if(!this.monster.isEmpty()){
@@ -114,6 +126,8 @@ public class Game {
             else{
                 System.out.println("Your hero is a winner of the game! Congratulations!");
             }
+
+
 
         }
 
