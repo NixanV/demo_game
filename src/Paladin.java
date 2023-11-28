@@ -39,6 +39,8 @@ public class Paladin extends Character implements IHealable{
             if(attackPower > defendDamage){
                 setHealth(getHealth() - (attackPower - defendDamage));
             }
+        }else if(getShield() == 0){
+            setHealth(getHealth() - (attackPower - defendDamage));
         }
 
     }

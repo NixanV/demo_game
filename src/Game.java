@@ -82,17 +82,18 @@ public class Game {
                             }
                             counter += 1;
                         }
-                        if(counter == 2){
-                            counter = 0;
+                        if(counter % 2 == 0){
 
                             System.out.println("Choose new item");
                             System.out.println("Options: ");
-                            System.out.println("Dragonfire Elixir; Eldritch Blade; Wyvern Armor");
+                            System.out.println("Dragonfire; Eldritch; Wyvern");
                             Scanner myS = new Scanner(System.in);
                             String newItem = myS.next();
                             Item myItem = new Item(newItem);
                             inventar.addItem(myItem);
+                            myItem.applyEffect(hero, newItem);
                         }
+
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 5);
                         Thread.sleep(5000);

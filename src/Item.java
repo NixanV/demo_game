@@ -25,13 +25,13 @@ public class Item {
 
 
     public void applyEffect(Character target, String item){
-        if(item.equals("Dragonfire Elixir")){
+        if(item.equals("Dragonfire")){
             target.setHealth(target.getHealth() + 5);
         }
-        else if(item.equals("Eldritch Blade")){
+        else if(item.equals("Eldritch")){
             target.setPower(target.getPower() + 3);
         }
-        else if(item.equals("Wyvern Armor")){
+        else if(item.equals("Wyvern")){
             target.setShield(target.getShield() + 15);
         }
     }
