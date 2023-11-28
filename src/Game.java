@@ -12,13 +12,13 @@ public class Game {
         if(race.equals("Paladin")){
             this.hero = new Paladin(name, 150, 25, race, 1, 0, 0);
         } else if (race.equals("Witcher")) {
-            this.hero = new Wicher(name, 120, 30, race, 1, 0);
+            this.hero = new Wicher(name, 120, 30, race, 1, 0, 0);
         } else if (race.equals("Varvar")) {
-            this.hero = new Varvar(name, 180, 35, race, 1, 0);
+            this.hero = new Varvar(name, 180, 35, race, 1, 0, 0);
         } else if (race.equals("Nekromant")) {
-            this.hero = new Nekromant(name, 130, 25, race, 1, 0);
+            this.hero = new Nekromant(name, 130, 25, race, 1, 0, 0);
         } else if (race.equals("Amazon")) {
-            this.hero = new Amazon(name, 100, 20, race, 1, 0);
+            this.hero = new Amazon(name, 100, 20, race, 1, 0, 0);
         }
         else if(race.isEmpty()){
             throw new WrongRaceException();

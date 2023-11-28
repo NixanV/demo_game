@@ -1,6 +1,6 @@
 public class Nekromant extends Character implements IHealable{
-    public Nekromant(String name, int health, int power, String race, int level, int xp){
-        super(name, health, power, race, level, xp);
+    public Nekromant(String name, int health, int power, String race, int level, int xp, int shield){
+        super(name, health, power, race, level, xp, shield);
     }
 
     @Override

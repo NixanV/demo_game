@@ -1,6 +1,6 @@
 public class Varvar extends Character{
-    public Varvar(String name, int health, int power, String race, int level, int xp) {
-        super(name, health, power, race, level, xp);
+    public Varvar(String name, int health, int power, String race, int level, int xp, int shield) {
+        super(name, health, power, race, level, xp, shield);
     }
 
     @Override
