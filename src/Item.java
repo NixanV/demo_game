@@ -42,7 +42,7 @@ public class Item {
             target.setPower(target.getPower() + 3);
         }
         else if(item.equals("Wyvern Armor")){
-
+            target.setShield(target.getShield() + 15);
         }
     }
 
