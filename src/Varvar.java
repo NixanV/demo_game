@@ -29,12 +29,15 @@ public class Varvar extends Character{
     @Override
     public void defend(int attackPower) {
         int defendDamage = 25;
-        int remainingHealth = getHealth() - (attackPower - defendDamage);
-
-        if(remainingHealth < 0) {
-            setHealth(0);
-        } else {
-            setHealth(remainingHealth);
+        if(getShield() > 0 && getShield() >= attackPower){
+            setShield(getShield() - attackPower);
+        }
+        else if(getShield() > 0 && getShield() < attackPower){
+            setShield(0);
+            attackPower -= getShield();
+            if(attackPower > defendDamage){
+                setHealth(getHealth() - (attackPower - defendDamage));
+            }
         }
 
     }

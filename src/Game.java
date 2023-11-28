@@ -103,9 +103,7 @@ public class Game {
                         break;
 
                     }
-                    if(hero.getShield() > 0){
 
-                    }
                     hero.defend(mons.getPower());
                 }
             }
