@@ -11,12 +11,9 @@ public class Item {
 //    applyEffect(Character target): Прилага ефекта върху целта.
 
     private String name;
-    private String effect;
 
-
-    public Item(String name, String effect){
+    public Item(String name){
         this.name = name;
-        this.effect = effect;
     }
 
     public String getName(){
@@ -26,13 +23,6 @@ public class Item {
         this.name = name;
     }
 
-    public String getEffect() {
-        return effect;
-    }
-
-    public void setEffect(String effect) {
-        this.effect = effect;
-    }
 
     public void applyEffect(Character target, String item){
         if(item.equals("Dragonfire Elixir")){

@@ -47,6 +47,9 @@ public class Game {
     }
 
     public void startBattle() throws WrongNameException, InterruptedException {
+        int counter = 0;
+        Inventory inventar = new Inventory();
+
         int numberOfMonsters = monster.size();
         if(!this.monster.isEmpty()){
             for(int i=0; i<numberOfMonsters; i++){
@@ -63,19 +66,32 @@ public class Game {
                             if(hero.getXp() >= 100){
                                 hero.levelUp();
                             }
-
+                            counter += 1;
                         }
                         else if(mons.getRace().equals("SkeletonKing")){
                             hero.gainExperience(30);
                             if(hero.getXp() >= 100){
                                 hero.levelUp();
                             }
+                            counter += 1;
                         }
                         else if(mons.getRace().equals("Butcher")){
                             hero.gainExperience(50);
                             if(hero.getXp() >= 100){
                                 hero.levelUp();
                             }
+                            counter += 1;
+                        }
+                        if(counter == 2){
+                            counter = 0;
+
+                            System.out.println("Choose new item");
+                            System.out.println("Options: ");
+                            System.out.println("Dragonfire Elixir; Eldritch Blade; Wyvern Armor");
+                            Scanner myS = new Scanner(System.in);
+                            String newItem = myS.next();
+                            Item myItem = new Item(newItem);
+                            inventar.addItem(myItem);
                         }
                         // da ne nadvishava max zhivota na geroq
                         hero.heal(hero, 5);
@@ -85,6 +101,7 @@ public class Game {
                         }
                         System.out.println("Hero is ready for next battle!");
                         break;
+
                     }
                     if(hero.getShield() > 0){
 
