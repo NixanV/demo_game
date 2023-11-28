@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -58,9 +59,14 @@ public class Game {
         myFrame.setSize(500, 500);
         myFrame.setVisible(true);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageIcon image = new ImageIcon("../paladin.png");
+        ImageIcon image = new ImageIcon("paladin");
         label.setIcon(image);
         myFrame.add(label);
+        if (image.getImageLoadStatus() == MediaTracker.COMPLETE) {
+            label.setIcon(image);
+        } else {
+            System.out.println("Image loading failed.");
+        }
 
         int numberOfMonsters = monster.size();
         if(!this.monster.isEmpty()){
